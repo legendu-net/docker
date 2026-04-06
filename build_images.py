@@ -14,8 +14,6 @@ from tenacity import retry, stop_after_attempt, wait_exponential
 
 DIRS = [
     "docker-base",
-    "docker-golang",
-    "docker-gophernotes",
     "docker-rust",
     "docker-rust-utils",
     "docker-rust-cicd",
