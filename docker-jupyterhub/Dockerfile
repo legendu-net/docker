@@ -9,4 +9,4 @@ RUN npm install -g configurable-http-proxy \
 COPY settings/jupyterhub_config.py /etc/jupyterhub/
 COPY scripts /scripts
 
-EXPOSE 8000
+EXPOSE 3000 8000

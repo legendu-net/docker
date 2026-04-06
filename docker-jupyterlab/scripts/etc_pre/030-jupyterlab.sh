@@ -1,20 +1,17 @@
 #!/usr/bin/env bash
 
-# codemirror configuration
-codemirror_dir=$HOME/.jupyter/lab/user-settings/@jupyterlab/codemirror-extension
-mkdir -p $codemirror_dir
-cp /settings/commands.jupyterlab-settings $codemirror_dir
+function _copy_config {
+    # $1: settings file
+    # $2: sub dir
+    local dir="$HOME/.jupyter/lab/user-settings/$2"
+    mkdir -p "$dir"
+    cp "/settings/$1" "$dir"
+}
 
-# apputils-extension configuration
-apputils_dir=$HOME/.jupyter/lab/user-settings/@jupyterlab/apputils-extension/
-mkdir -p $apputils_dir
-cp /settings/themes.jupyterlab-settings $apputils_dir
-
-# jupyterlab-lsp
-lsp_dir=$HOME/.jupyter/lab/user-settings/@krassowski/jupyterlab-lsp
-mkdir -p $lsp_dir
-cp /settings/jupyterlab-lsp.json $lsp_dir/plugin.jupyterlab-settings
-
+_copy_config commands.jupyterlab-settings @jupyterlab/codemirror-extension
+_copy_config themes.jupyterlab-settings @jupyterlab/apputils-extension
+_copy_config jupyterlab-lsp.json @krassowski/jupyterlab-lsp/plugin.jupyterlab-settings
+_copy_config settings.jupyterlab-settings jupyterlab_code_formatter
 chown -R $DOCKER_USER:$DOCKER_GROUP $HOME/.jupyter
 
 su -m $DOCKER_USER -c "icon fish -c"

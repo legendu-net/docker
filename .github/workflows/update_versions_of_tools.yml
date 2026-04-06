@@ -13,12 +13,12 @@ jobs:
           persist-credentials: false
       - name: Install uv
         run: curl -LsSf https://astral.sh/uv/install.sh | sh
-      - name: Update the Version of code-server
+      - name: Update the Version of icon
         run: |
           curl -sSL https://raw.githubusercontent.com/legendu-net/github_actions_scripts/main/update_version_dockerfile.py \
             | uv run --script - \
-            --dockerfile docker-vscode-server/Dockerfile \
-            --repo coder/code-server \
+            --dockerfile docker-base/Dockerfile \
+            --repo legendu-net/icon \
             --token ${{ secrets.GITHUBACTIONS }}
       - name: Update the Version of JupyterLab
         run: |
@@ -27,11 +27,17 @@ jobs:
             --dockerfile docker-jupyterlab/Dockerfile \
             --repo jupyterlab/jupyterlab \
             --token ${{ secrets.GITHUBACTIONS }}
-      - name: Update the Version of icon
+      - name: Update the Version of JupyterHub
         run: |
           curl -sSL https://raw.githubusercontent.com/legendu-net/github_actions_scripts/main/update_version_dockerfile.py \
             | uv run --script - \
-            --repo legendu-net/icon \
-            --repo jupyterlab/jupyterlab \
+            --dockerfile docker-jupyterhub/Dockerfile \
+            --repo jupyterhub/jupyterhub \
             --token ${{ secrets.GITHUBACTIONS }}
-
+      - name: Update the Version of code-server
+        run: |
+          curl -sSL https://raw.githubusercontent.com/legendu-net/github_actions_scripts/main/update_version_dockerfile.py \
+            | uv run --script - \
+            --dockerfile docker-vscode-server/Dockerfile \
+            --repo coder/code-server \
+            --token ${{ secrets.GITHUBACTIONS }}
