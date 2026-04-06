@@ -6,9 +6,11 @@
 # ]
 # ///
 
+import datetime
+import subprocess as sp
 from dulwich.repo import Repo
 from dulwich import porcelain
-from tenacity import retry, stop_after_attempt
+from tenacity import retry, stop_after_attempt, wait_exponential
 
 DIRS = [
     "docker-base",
@@ -46,13 +48,13 @@ def tag_date(tag: str) -> str:
 
 
 @retry(
-    stop=stop_after_attempt(3),
-    wait=wait_exponential(multiplier=60, min=60, max=300)
+    stop=stop_after_attempt(3), wait=wait_exponential(multiplier=60, min=60, max=300)
 )
 def push_image(image: str):
     sp.run(
         ["docker", "push", image],
-        shell=False, check=True,
+        shell=False,
+        check=True,
     )
 
 
@@ -75,9 +77,9 @@ def is_no_diff() -> bool:
     url = repo.get_config().get(("remote", "origin"), "url").decode("utf-8")
     refs = porcelain.ls_remote(url).refs
     walker = repo.get_walker(
-            include=[refs[b"refs/heads/dev"]],
-            exclude=[refs[b"refs/heads/main"]],
-        )
+        include=[refs[b"refs/heads/dev"]],
+        exclude=[refs[b"refs/heads/main"]],
+    )
     return next(iter(walker), None) is None
 
 
@@ -86,10 +88,10 @@ def build_images():
     if is_no_diff():
         tags.append("latest")
     tags.extend([tag_date(tag) for tag in tags])
-    for dir_ in DIRS: 
+    print("Building Docker images using tags:", ", ".join(tags), "\n")
+    for dir_ in DIRS:
         _build_image(dir_, tags=tags)
 
 
 if __name__ == "__main__":
     build_images()
-
