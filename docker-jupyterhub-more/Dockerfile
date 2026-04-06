@@ -22,7 +22,7 @@ COPY --from=dclong/rust-utils /usr/local/cargo/bin /usr/local/cargo/bin
 COPY --from=dclong/rust-utils /usr/bin/nperf /usr/bin/
 COPY --from=dclong/rust-utils /root/.local/share/jupyter/kernels/rust/ /usr/local/share/jupyter/kernels/rust/
 
-# GoLANG Kernel
+# GoLANG
 ENV PATH=/usr/local/go/bin:$PATH
 RUN icon golang -ic --copy \
     && /scripts/sys/purge_cache.sh
