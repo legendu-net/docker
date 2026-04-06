@@ -62,6 +62,7 @@ def _build_image(dir_: str, tags: str | list[str]):
     if isinstance(tags, str):
         tags = [tags]
     image = dir_.replace("docker-", "dclong/")
+    print(f"\n\nBuilding the Docker image {image}...")
     cmd = ["docker", "build", dir_]
     for tag in tags:
         cmd.append("-t")
