@@ -61,7 +61,7 @@ def _build_image(dir_: str, tags: str | list[str]):
     if isinstance(tags, str):
         tags = [tags]
     image = dir_.replace("docker-", "dclong/")
-    print(f"\n\nBuilding the Docker image {image}...")
+    print(f"\n\nBuilding the Docker image {image}...", flush=True)
     cmd = ["docker", "build", dir_]
     for tag in tags:
         cmd.append("-t")
@@ -88,7 +88,7 @@ def build_images():
     if is_no_diff():
         tags.append("latest")
     tags.extend([tag_date(tag) for tag in tags])
-    print("Building Docker images using tags:", ", ".join(tags), "\n")
+    print("Building Docker images using tags:", ", ".join(tags), "\n", flush=True)
     failures = []
     for dir_ in DIRS:
         try:
