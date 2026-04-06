@@ -96,7 +96,7 @@ def build_images():
         except Exception as _:
             failures.append(dir_)
     if failures:
-        sys.exit("Error: failed to build images: ", ", ".join(failures), "\n")
+        sys.exit(f"Error: failed to build images: {', '.join(failures)}\n")
 
 
 if __name__ == "__main__":
