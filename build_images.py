@@ -8,6 +8,7 @@
 
 import datetime
 import subprocess as sp
+import sys
 from dulwich.repo import Repo
 from dulwich import porcelain
 from tenacity import retry, stop_after_attempt, wait_exponential
@@ -88,8 +89,14 @@ def build_images():
         tags.append("latest")
     tags.extend([tag_date(tag) for tag in tags])
     print("Building Docker images using tags:", ", ".join(tags), "\n")
+    failures = []
     for dir_ in DIRS:
-        _build_image(dir_, tags=tags)
+        try:
+            _build_image(dir_, tags=tags)
+        except Exception as _:
+            failures.append(dir_)
+    if failures:
+        sys.exit("Error: failed to build images: ", ", ".join(failures), "\n")
 
 
 if __name__ == "__main__":

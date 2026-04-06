@@ -48,8 +48,7 @@ def get_cpu_limit() -> float:
             val.isdigit() for val in cpu_limit_cgroup
         ):
             cpu_limit_cgroup = [int(val) for val in cpu_limit_cgroup]
-            cpu_limit = min(
-                cpu_limit, cpu_limit_cgroup[0] / cpu_limit_cgroup[1])
+            cpu_limit = min(cpu_limit, cpu_limit_cgroup[0] / cpu_limit_cgroup[1])
     return cpu_limit
 
 
