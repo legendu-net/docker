@@ -1,4 +1,4 @@
-# dclong/nfs [@DockerHub](https://hub.docker.com/r/dclong/nfs/) | [@GitHub](https://github.com/dclong/docker-nfs)
+# dclong/nfs [@DockerHub](https://hub.docker.com/r/dclong/nfs/) | [@GitHub](https://github.com/legendu-net/docker/tree/dev/docker-nfs)
 
 NFS in Ubuntu. 
 

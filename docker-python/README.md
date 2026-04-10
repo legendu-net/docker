@@ -1,4 +1,4 @@
-# dclong/python [@DockerHub](https://hub.docker.com/r/dclong/python/) | [@GitHub](https://github.com/dclong/docker-python)
+# dclong/python [@DockerHub](https://hub.docker.com/r/dclong/python/) | [@GitHub](https://github.com/legendu-net/docker/tree/dev/docker-python)
 
 Python 3 in Docker. 
 

@@ -1,4 +1,4 @@
-# dclong/jdk [@DockerHub](https://hub.docker.com/r/dclong/jdk/) | [@GitHub](https://github.com/dclong/docker-jdk)
+# dclong/jdk [@DockerHub](https://hub.docker.com/r/dclong/jdk/) | [@GitHub](https://github.com/legendu-net/docker/tree/dev/docker-jdk)
 
 JDK with basic utils in Docker.
 

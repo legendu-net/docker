@@ -1,4 +1,4 @@
-# dclong/jupyterhub-antlr4 [@DockerHub](https://hub.docker.com/r/dclong/jupyterhub-antlr4/) | [@GitHub](https://github.com/dclong/docker-jupyterhub-antlr4)
+# dclong/jupyterhub-antlr4 [@DockerHub](https://hub.docker.com/r/dclong/jupyterhub-antlr4/) | [@GitHub](https://github.com/legendu-net/docker/tree/dev/docker-jupyterhub-antlr4)
 
 JupyterHub with ANTLR4 in Docker. 
 

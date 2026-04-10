@@ -1,4 +1,4 @@
-# dclong/ubuntu_cn [@DockerHub](https://hub.docker.com/r/dclong/ubuntu_cn/) | [@GitHub](https://github.com/dclong/docker-ubuntu_cn)
+# dclong/ubuntu_cn [@DockerHub](https://hub.docker.com/r/dclong/ubuntu_cn/) | [@GitHub](https://github.com/legendu-net/docker/tree/dev/docker-ubuntu_cn)
 
 Ubuntu with Chinese Locale.
 

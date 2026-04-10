@@ -1,4 +1,4 @@
-# dclong/jupyterhub-jdk [@DockerHub](https://hub.docker.com/r/dclong/jupyterhub-jdk/) | [@GitHub](https://github.com/dclong/docker-jupyterhub-jdk)
+# dclong/jupyterhub-jdk [@DockerHub](https://hub.docker.com/r/dclong/jupyterhub-jdk/) | [@GitHub](https://github.com/legendu-net/docker/tree/dev/docker-jupyterhub-jdk)
 
 JupyterHub with JDK 21, Maven and Gradle in Docker.
 

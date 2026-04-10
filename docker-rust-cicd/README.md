@@ -1,4 +1,4 @@
-# dclong/rust-cicd [@DockerHub](https://hub.docker.com/r/dclong/rust-cicd/) | [@GitHub](https://github.com/dclong/docker-rust-cicd)
+# dclong/rust-cicd [@DockerHub](https://hub.docker.com/r/dclong/rust-cicd/) | [@GitHub](https://github.com/legendu-net/docker/tree/dev/docker-rust-cicd)
 
 Docker image for Rust CICD. 
 

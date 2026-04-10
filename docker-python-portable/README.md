@@ -1,4 +1,4 @@
-# dclong/python-portable [@DockerHub](https://hub.docker.com/r/dclong/python-portable/) | [@GitHub](https://github.com/dclong/docker-python-portable)
+# dclong/python-portable [@DockerHub](https://hub.docker.com/r/dclong/python-portable/) | [@GitHub](https://github.com/legendu-net/docker/tree/dev/docker-python-portable)
 
 Portable Python (with `pip` but not 3rd-party Python packages) in Docker 
 using [python-build-standalone](https://github.com/indygreg/python-build-standalone)

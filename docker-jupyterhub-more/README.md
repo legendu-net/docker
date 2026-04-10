@@ -1,4 +1,4 @@
-# dclong/jupyterhub-more [@DockerHub](https://hub.docker.com/r/dclong/jupyterhub-more/) | [@GitHub](https://github.com/dclong/docker-jupyterhub-more)
+# dclong/jupyterhub-more [@DockerHub](https://hub.docker.com/r/dclong/jupyterhub-more/) | [@GitHub](https://github.com/legendu-net/docker/tree/dev/docker-jupyterhub-more)
 
 JupyterHub with Python, Kotlin, JavaScript, TypeScript and Rust Kernels. 
 

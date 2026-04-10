@@ -1,4 +1,4 @@
-# dclong/jupyterlab [@DockerHub](https://hub.docker.com/r/dclong/jupyterlab/) | [@GitHub](https://github.com/dclong/docker-jupyterlab)
+# dclong/jupyterlab [@DockerHub](https://hub.docker.com/r/dclong/jupyterlab/) | [@GitHub](https://github.com/legendu-net/docker/tree/dev/docker-jupyterlab)
 
 JupyterLab in Docker. 
 **It is recommended that you use the image

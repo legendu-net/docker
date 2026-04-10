@@ -1,4 +1,4 @@
-# dclong/jupyterhub-golang [@DockerHub](https://hub.docker.com/r/dclong/jupyterhub-golang/) | [@GitHub](https://github.com/dclong/docker-jupyterhub-golang)
+# dclong/jupyterhub-golang [@DockerHub](https://hub.docker.com/r/dclong/jupyterhub-golang/) | [@GitHub](https://github.com/legendu-net/docker/tree/dev/docker-jupyterhub-golang)
 
 JupyterHub with a GoLANG kernel.
 

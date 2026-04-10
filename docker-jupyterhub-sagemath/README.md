@@ -1,4 +1,4 @@
-# dclong/jupyterhub-sagemath [@DockerHub](https://hub.docker.com/r/dclong/jupyterhub-sagemath/) | [@GitHub](https://github.com/dclong/docker-jupyterhub-sagemath)
+# dclong/jupyterhub-sagemath [@DockerHub](https://hub.docker.com/r/dclong/jupyterhub-sagemath/) | [@GitHub](https://github.com/legendu-net/docker/tree/dev/docker-jupyterhub-sagemath)
 
 JupyterHub with 
 [SageMath](https://www.sagemath.org/)

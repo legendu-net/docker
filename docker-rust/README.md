@@ -1,4 +1,4 @@
-# dclong/rust [@DockerHub](https://hub.docker.com/r/dclong/rust/) | [@GitHub](https://github.com/dclong/docker-rust)
+# dclong/rust [@DockerHub](https://hub.docker.com/r/dclong/rust/) | [@GitHub](https://github.com/legendu-net/docker/tree/dev/docker-rust)
 
 Rust in Docker. 
 
