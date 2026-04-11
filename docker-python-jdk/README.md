@@ -1,4 +1,4 @@
-# dclong/python-jdk [@DockerHub](https://hub.docker.com/r/dclong/python-jdk/) | [@GitHub](https://github.com/dclong/docker-python-jdk)
+# dclong/python-jdk [@DockerHub](https://hub.docker.com/r/dclong/python-jdk/) | [@GitHub](https://github.com/legendu-net/docker/tree/dev/docker-python-jdk)
 
 Python and OpenJDK 8 in Docker.
 

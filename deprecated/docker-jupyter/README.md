@@ -1,4 +1,4 @@
-# dclong/jupyter [@DockerHub](https://hub.docker.com/r/dclong/jupyter/) | [@GitHub](https://github.com/dclong/docker-jupyter)
+# dclong/jupyter [@DockerHub](https://hub.docker.com/r/dclong/jupyter/) | [@GitHub](https://github.com/legendu-net/docker/tree/dev/docker-jupyter)
 
 Jupyter Notebook in Docker. 
 **It is recommended that you use the image

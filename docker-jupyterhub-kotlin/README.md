@@ -1,4 +1,4 @@
-# dclong/jupyterhub-kotlin [@DockerHub](https://hub.docker.com/r/dclong/jupyterhub-kotlin/) | [@GitHub](https://github.com/dclong/docker-jupyterhub-kotlin)
+# dclong/jupyterhub-kotlin [@DockerHub](https://hub.docker.com/r/dclong/jupyterhub-kotlin/) | [@GitHub](https://github.com/legendu-net/docker/tree/dev/docker-jupyterhub-kotlin)
 
 JupyterHub with a Kotlin Kernel. 
 

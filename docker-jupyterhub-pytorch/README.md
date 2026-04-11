@@ -1,4 +1,4 @@
-# dclong/jupyterhub-pytorch [@DockerHub](https://hub.docker.com/r/dclong/jupyterhub-pytorch/) | [@GitHub](https://github.com/dclong/docker-jupyterhub-pytorch)
+# dclong/jupyterhub-pytorch [@DockerHub](https://hub.docker.com/r/dclong/jupyterhub-pytorch/) | [@GitHub](https://github.com/legendu-net/docker/tree/dev/docker-jupyterhub-pytorch)
 
 JupyterHub with PyTorch (GPU/CUDA enabled) in Docker.
 

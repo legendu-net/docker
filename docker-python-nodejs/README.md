@@ -1,4 +1,4 @@
-# dclong/python-nodejs [@DockerHub](https://hub.docker.com/r/dclong/python-nodejs/) | [@GitHub](https://github.com/dclong/docker-python-nodejs)
+# dclong/python-nodejs [@DockerHub](https://hub.docker.com/r/dclong/python-nodejs/) | [@GitHub](https://github.com/legendu-net/docker/tree/dev/docker-python-nodejs)
 
 Python and NodeJS in Docker.
 

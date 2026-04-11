@@ -1,4 +1,4 @@
-# dclong/jupyterhub-ganymede [@DockerHub](https://hub.docker.com/r/dclong/jupyterhub-ganymede/) | [@GitHub](https://github.com/dclong/docker-jupyterhub-ganymede)
+# dclong/jupyterhub-ganymede [@DockerHub](https://hub.docker.com/r/dclong/jupyterhub-ganymede/) | [@GitHub](https://github.com/legendu-net/docker/tree/dev/docker-jupyterhub-ganymede)
 
 JupyterHub with the 
 [Ganymede Kernel](https://github.com/allen-ball/ganymede)

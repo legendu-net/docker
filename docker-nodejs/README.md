@@ -1,4 +1,4 @@
-# dclong/nodejs [@DockerHub](https://hub.docker.com/r/dclong/nodejs/) | [@GitHub](https://github.com/dclong/docker-nodejs)
+# dclong/nodejs [@DockerHub](https://hub.docker.com/r/dclong/nodejs/) | [@GitHub](https://github.com/legendu-net/docker/tree/dev/docker-nodejs)
 
 NodeJS in Docker.
 

@@ -1,4 +1,4 @@
-# dclong/lubuntu [@DockerHub](https://hub.docker.com/r/dclong/lubuntu/) | [@GitHub](https://github.com/dclong/docker-lubuntu)
+# dclong/lubuntu [@DockerHub](https://hub.docker.com/r/dclong/lubuntu/) | [@GitHub](https://github.com/legendu-net/docker/tree/dev/docker-lubuntu)
 
 It is suggested that you do NOT use this Docker images and its offspring images as there are issues (please refer to Known Issues) 
 and it is not pratical useful.

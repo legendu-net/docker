@@ -1,4 +1,4 @@
-# dclong/jupyterhub-beakerx [@DockerHub](https://hub.docker.com/r/dclong/jupyterhub-beakerx/) | [@GitHub](https://github.com/dclong/docker-jupyterhub-beakerx)
+# dclong/jupyterhub-beakerx [@DockerHub](https://hub.docker.com/r/dclong/jupyterhub-beakerx/) | [@GitHub](https://github.com/legendu-net/docker/tree/dev/docker-jupyterhub-beakerx)
 
 JupyterHub with BeakerX. 
 <span style="color:red">

@@ -1,4 +1,4 @@
-# dclong/lubuntu-jdk [@DockerHub](https://hub.docker.com/r/dclong/lubuntu-jdk/) | [@GitHub](https://github.com/dclong/docker-lubuntu-jdk)
+# dclong/lubuntu-jdk [@DockerHub](https://hub.docker.com/r/dclong/lubuntu-jdk/) | [@GitHub](https://github.com/legendu-net/docker/tree/dev/docker-lubuntu-jdk)
 
 Lubuntu with OpenJDK 8 in Docker.
 

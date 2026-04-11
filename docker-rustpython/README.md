@@ -1,4 +1,4 @@
-# dclong/rustpython [@DockerHub](https://hub.docker.com/r/dclong/rustpython/) | [@GitHub](https://github.com/dclong/docker-rustpython)
+# dclong/rustpython [@DockerHub](https://hub.docker.com/r/dclong/rustpython/) | [@GitHub](https://github.com/legendu-net/docker/tree/dev/docker-rustpython)
 
 [RustPython](https://github.com/RustPython/RustPython) in Docker. 
 

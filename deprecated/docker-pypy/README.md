@@ -1,4 +1,4 @@
-# dclong/pypy [@DockerHub](https://hub.docker.com/r/dclong/pypy/) | [@GitHub](https://github.com/dclong/docker-pypy)
+# dclong/pypy [@DockerHub](https://hub.docker.com/r/dclong/pypy/) | [@GitHub](https://github.com/legendu-net/docker/tree/dev/docker-pypy)
 
 PyPy 3 in Docker. 
 
@@ -6,7 +6,6 @@ PyPy 3 in Docker.
 
 - ipython
 - pytype pylint yapf pytest
-- [xinstall](https://github.com/dclong/xinstall)
 
 ## Prerequisite
 You need to [install Docker](http://www.legendu.net/en/blog/docker-installation/) before you use this Docker image.

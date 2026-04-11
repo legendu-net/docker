@@ -1,4 +1,4 @@
-# dclong/jupyterhub-cuda [@DockerHub](https://hub.docker.com/r/dclong/jupyterhub-cuda/) | [@GitHub](https://github.com/dclong/docker-jupyterhub-cuda)
+# dclong/jupyterhub-cuda [@DockerHub](https://hub.docker.com/r/dclong/jupyterhub-cuda/) | [@GitHub](https://github.com/legendu-net/docker/tree/dev/docker-jupyterhub-cuda)
 
 JupyterHub with CUDA base (nvidia/cuda:10.1-base) in Docker.
 

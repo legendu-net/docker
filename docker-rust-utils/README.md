@@ -1,4 +1,4 @@
-# dclong/rust-utils [@DockerHub](https://hub.docker.com/r/dclong/rust-utils/) | [@GitHub](https://github.com/dclong/docker-rust-utils)
+# dclong/rust-utils [@DockerHub](https://hub.docker.com/r/dclong/rust-utils/) | [@GitHub](https://github.com/legendu-net/docker/tree/dev/docker-rust-utils)
 
 Rust with useful utils in Docker.
 

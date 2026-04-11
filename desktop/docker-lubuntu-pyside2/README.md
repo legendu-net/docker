@@ -1,4 +1,4 @@
-# dclong/lubuntu-pyside2 [@DockerHub](https://hub.docker.com/r/dclong/lubuntu-pyside2/) | [@GitHub](https://github.com/dclong/docker-lubuntu-pyside2)
+# dclong/lubuntu-pyside2 [@DockerHub](https://hub.docker.com/r/dclong/lubuntu-pyside2/) | [@GitHub](https://github.com/legendu-net/docker/tree/dev/docker-lubuntu-pyside2)
 
 Lubuntu with pyside2 in Docker.
 

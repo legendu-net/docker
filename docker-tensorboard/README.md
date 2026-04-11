@@ -1,4 +1,4 @@
-# dclong/tensorboard [@DockerHub](https://hub.docker.com/r/dclong/tensorboard/) | [@GitHub](https://github.com/dclong/docker-tensorboard)
+# dclong/tensorboard [@DockerHub](https://hub.docker.com/r/dclong/tensorboard/) | [@GitHub](https://github.com/legendu-net/docker/tree/dev/docker-tensorboard)
 
 TensorBoard in Docker.
 

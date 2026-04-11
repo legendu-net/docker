@@ -1,4 +1,4 @@
-# dclong/vscode-server [@DockerHub](https://hub.docker.com/r/dclong/vscode-server/) | [@GitHub](https://github.com/dclong/docker-vscode-server)
+# dclong/vscode-server [@DockerHub](https://hub.docker.com/r/dclong/vscode-server/) | [@GitHub](https://github.com/legendu-net/docker/tree/dev/docker-vscode-server)
 
 Visual Studio Code server in Docker.
 
