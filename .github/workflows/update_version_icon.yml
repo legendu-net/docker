@@ -20,3 +20,4 @@ jobs:
             --dockerfile docker-base/Dockerfile \
             --repo legendu-net/icon \
             --token ${{ secrets.GITHUBACTIONS }}
+
