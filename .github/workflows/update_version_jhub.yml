@@ -1,0 +1,23 @@
+name: Update the Version of JupyterHub
+on:
+  schedule:
+    - cron: '0 2 * * *'
+jobs:
+  update-version-jupyterhub:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: Install uv
+        run: curl -LsSf https://astral.sh/uv/install.sh | sh
+      - name: Update the Version of JupyterHub
+        run: |
+          curl -sSL https://raw.githubusercontent.com/legendu-net/github_actions_scripts/main/docker/update_version_dockerfile.py \
+            | uv run --script - \
+            --dockerfile docker-jupyterhub/Dockerfile \
+            --repo jupyterhub/jupyterhub \
+            --token ${{ secrets.GITHUBACTIONS }}
+
