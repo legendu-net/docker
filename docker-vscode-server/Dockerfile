@@ -22,6 +22,7 @@ RUN apt-get -y update && apt-get -y install valgrind \
     && code-server --install-extension vadimcn.vscode-lldb \
     && code-server --install-extension fwcd.kotlin \
     && code-server --install-extension karsten7.mojo-vscode \
+    && code-server --install-extension adpyke.vscode-sql-formatter \
     #&& code-server --install-extension model-checking.kani-vscode-extension \
     #&& code-server --install-extension modular-mojotools.vscode-mojo \
     #&& code-server --install-extension /scripts/VisualStudioExptTeam.vscodeintellicode-1.2.9.vsix \
