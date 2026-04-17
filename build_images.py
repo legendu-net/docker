@@ -28,12 +28,12 @@ DIRS = [
     "docker-vscode-server",
     "docker-jupyterhub-ds",
     # "docker-gitpod",
-    "docker-jupyterhub-cuda",
-    "docker-jupyterhub-pytorch",
+    # "docker-jupyterhub-cuda",
+    # "docker-jupyterhub-pytorch",
     "docker-tensorboard",
     "docker-jupyterhub-kotlin",
-    "docker-jupyterhub-ganymede",
-    "docker-rustpython",
+    # "docker-jupyterhub-ganymede",
+    # "docker-rustpython",
 ]
 
 
@@ -96,7 +96,7 @@ def build_images():
         except Exception as _:
             failures.append(dir_)
     if failures:
-        sys.exit(f"Error: failed to build images: {', '.join(failures)}\n")
+        sys.exit(f"\n\nError: failed to build images: {', '.join(failures)}\n")
 
 
 if __name__ == "__main__":
