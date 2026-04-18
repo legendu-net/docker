@@ -11,6 +11,7 @@ RUN apt-get -y update && apt-get -y install valgrind \
     #&& code-server --install-extension vscodevim.vim@1.27.2 \
     && code-server --install-extension Google.geminicodeassist \
     && code-server --install-extension google.gemini-cli-vscode-ide-companion \
+    && code-server --install-extension anthropic.claude-code \
     && code-server --install-extension asvetliakov.vscode-neovim@1.18.24 \
     && code-server --install-extension mechatroner.rainbow-csv \
     && code-server --install-extension usernamehw.errorlens \
