@@ -138,8 +138,11 @@ def _is_no_diff() -> bool:
 
 def build_images():
     tags = ["next"]
-    if _is_no_diff():
-        tags.append("latest")
+    try:
+        if _is_no_diff():
+            tags.append("latest")
+    except Exception:
+        pass
     tags.extend([_tag_date(tag) for tag in tags])
     print("Building Docker images using tags:", ", ".join(tags), "\n", flush=True)
     failures = []
