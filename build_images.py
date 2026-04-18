@@ -7,6 +7,7 @@
 # ///
 
 import datetime
+from pathlib import Path
 import re
 import subprocess as sp
 import sys
@@ -84,7 +85,7 @@ COPY settings/sysctl.conf /etc/sysctl.conf
 def _update_base_image_tag(dir_: str, tags: list[str]) -> None:
     if "latest" in tags:
         return
-    dockerfile = dir_ / "Dockerfile"
+    dockerfile = Path(dir_) / "Dockerfile"
     text = dockerfile.read_text()
     dockerfile.write_text(_update_base_image_tag_text(text))
 
