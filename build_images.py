@@ -40,8 +40,9 @@ DIRS = [
 
 
 def _update_base_image_tag_text(text: str) -> str:
-    text = re.sub(r"(\nFROM dclong/\w+)\n", r"\1:next\n", text)
-    text = re.sub(r"(\nCOPY --from=dclong/\w+(-\w+)?) ", r"\1:next ", text)
+    pattern_image = r"dclong/\w+(-\w+)?"
+    text = re.sub(rf"(\nFROM {pattern_image})\n", r"\1:next\n", text)
+    text = re.sub(rf"(\nCOPY --from={pattern_image}) ", r"\1:next ", text)
     return text
 
 
