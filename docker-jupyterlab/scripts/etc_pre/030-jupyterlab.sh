@@ -10,6 +10,7 @@ function _copy_config {
 
 _copy_config commands.jupyterlab-settings @jupyterlab/codemirror-extension
 _copy_config themes.jupyterlab-settings @jupyterlab/apputils-extension
+_copy_config shortcuts.jupyterlab-settings @jupyterlab/shortcuts-extension
 _copy_config jupyterlab-lsp.json @krassowski/jupyterlab-lsp/plugin.jupyterlab-settings
 _copy_config settings.jupyterlab-settings jupyterlab_code_formatter
 chown -R $DOCKER_USER:$DOCKER_GROUP $HOME/.jupyter

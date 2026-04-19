@@ -11,6 +11,7 @@ RUN apt-get -y update && apt-get -y install valgrind \
     #&& code-server --install-extension vscodevim.vim@1.27.2 \
     && code-server --install-extension Google.geminicodeassist \
     && code-server --install-extension google.gemini-cli-vscode-ide-companion \
+    && code-server --install-extension anthropic.claude-code \
     && code-server --install-extension asvetliakov.vscode-neovim@1.18.24 \
     && code-server --install-extension mechatroner.rainbow-csv \
     && code-server --install-extension usernamehw.errorlens \
@@ -22,6 +23,7 @@ RUN apt-get -y update && apt-get -y install valgrind \
     && code-server --install-extension vadimcn.vscode-lldb \
     && code-server --install-extension fwcd.kotlin \
     && code-server --install-extension karsten7.mojo-vscode \
+    && code-server --install-extension ReneSaarsoo.sql-formatter-vsc \
     #&& code-server --install-extension model-checking.kani-vscode-extension \
     #&& code-server --install-extension modular-mojotools.vscode-mojo \
     #&& code-server --install-extension /scripts/VisualStudioExptTeam.vscodeintellicode-1.2.9.vsix \

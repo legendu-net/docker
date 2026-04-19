@@ -12,8 +12,9 @@ RUN apt-get -y update \
 RUN pip3 install \
         loguru pysnooper \
         numpy scipy polars pandas 'pyarrow>=0.14.0' \
-        scikit-learn lightgbm graphviz \
-        matplotlib bokeh holoviews[recommended] hvplot pyviz_comms \
+        scikit-learn lightgbm \
+        google-genai \
+        graphviz matplotlib bokeh holoviews[recommended] hvplot pyviz_comms \
         tabulate \
         'JPype1>=0.7.0' sqlparse \
         requests[socks] lxml notifiers \
