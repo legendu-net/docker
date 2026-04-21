@@ -1,5 +1,5 @@
 # NAME: dclong/gophernotes
-FROM dclong/golang
+FROM dclong/golang:next
 # GIT: https://github.com/legendu-net/docker-golang.git
 
 RUN env GO111MODULE=on go install github.com/gopherdata/gophernotes@latest \

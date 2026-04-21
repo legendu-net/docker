@@ -1,7 +1,7 @@
 name: Update the Version of JupyterLab
 on:
   schedule:
-    - cron: '0 2 * * *'
+    - cron: '0 14 * * *'
 jobs:
   update-version-jupyterlab:
     runs-on: ubuntu-latest

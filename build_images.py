@@ -6,13 +6,14 @@
 # ]
 # ///
 
+import argparse
 import datetime
 from pathlib import Path
-import re
 import subprocess as sp
 import sys
 from dulwich.repo import Repo
 from dulwich import porcelain
+from dulwich.diff_tree import tree_changes
 from tenacity import retry, stop_after_attempt, wait_exponential
 
 DIRS = [
@@ -39,56 +40,34 @@ DIRS = [
 ]
 
 
-def _update_base_image_tag_text(text: str) -> str:
-    pattern_image = r"dclong/\w+(-\w+)?"
-    text = re.sub(rf"(\nFROM {pattern_image})\n", r"\1:next\n", text)
-    text = re.sub(rf"(\nCOPY --from={pattern_image}) ", r"\1:next ", text)
-    return text
+def changed_files_between(commit1: str, commit2: str) -> list[Path]:
+    """Get a unique list of changed files between 2 commits.
+
+    :param commit1: The first commit ID.
+    :param commit2: The second commit ID.
+    :return: A unique list of changed files.
+    """
+    repo = Repo(".")
+    c1 = repo[commit1.encode()]
+    c2 = repo[commit2.encode()]
+    changes = tree_changes(repo.object_store, c1.tree, c2.tree)
+    files = set()
+    for change in changes:
+        if change.old and change.old.path:
+            files.add(change.old.path.decode())
+        if change.new and change.new.path:
+            files.add(change.new.path.decode())
+    return sorted(Path(file).resolve() for file in files)
 
 
-def test_update_base_image_tag_text():
-    text = """
-# NAME: dclong/rust-cicd
-FROM dclong/python
-
-RUN pip3 install github-rest-api
-
-ENV RUSTUP_HOME=/usr/local/rustup PATH=/usr/local/cargo/bin:$PATH
-COPY --from=dclong/rust /usr/local/rustup/ /usr/local/rustup/
-COPY --from=dclong/rust \
-        /usr/local/cargo/bin/rustc \
-        /usr/local/cargo/bin/rustdoc \
-        /usr/local/cargo/bin/cargo \
-        /usr/local/cargo/bin/cargo-fmt \
-        /usr/local/cargo/bin/rustfmt \
-    /usr/local/cargo/bin/
-COPY --from=dclong/rust-utils /usr/local/cargo/bin/cargo-criterion /usr/local/cargo/bin/
-COPY --from=dclong/rust-utils /usr/bin/nperf /usr/bin/
-COPY settings/sysctl.conf /etc/sysctl.conf
-""".strip()
-    text_truth = (
-        text.replace(
-            "FROM dclong/python",
-            "FROM dclong/python:next",
-        )
-        .replace(
-            "--from=dclong/rust-utils ",
-            "--from=dclong/rust-utils:next ",
-        )
-        .replace(
-            "--from=dclong/rust ",
-            "--from=dclong/rust:next ",
-        )
-    )
-    assert _update_base_image_tag_text(text) == text_truth
-
-
-def _update_base_image_tag(dir_: str, tags: list[str]) -> None:
-    if "latest" in tags:
-        return
-    dockerfile = Path(dir_) / "Dockerfile"
-    text = dockerfile.read_text()
-    dockerfile.write_text(_update_base_image_tag_text(text))
+def has_relevant_changes(commit1: str, commit2: str) -> bool:
+    if not commit1 or not commit2:
+        return True
+    dirs = [Path(d).resolve() for d in DIRS]
+    for p in changed_files_between(commit1, commit2):
+        if any(p.is_relative_to(d) for d in dirs):
+            return True
+    return False
 
 
 def _tag_date(tag: str) -> str:
@@ -114,7 +93,6 @@ def _push_image(image: str):
 def _build_image(dir_: str, tags: str | list[str]):
     if isinstance(tags, str):
         tags = [tags]
-    _update_base_image_tag(dir_, tags)
     image = dir_.replace("docker-", "dclong/")
     print(f"\n\nBuilding the Docker image {image}...", flush=True)
     cmd = ["docker", "build", dir_]
@@ -138,7 +116,12 @@ def _is_no_diff() -> bool:
     return next(iter(walker), None) is None
 
 
-def build_images():
+def build_images(commit1: str, commit2: str):
+    if not has_relevant_changes(commit1, commit2):
+        print(
+            f"Skip building Docker images as there are no relavent changes between {commit1} and {commit2}.\n"
+        )
+        return
     tags = ["next"]
     try:
         if _is_no_diff():
@@ -157,5 +140,33 @@ def build_images():
         sys.exit(f"\n\nError: failed to build images: {', '.join(failures)}\n")
 
 
+def parse_args():
+    """Parse command-line arguments.
+
+    :return: An object containing the parsed arguments.
+    """
+    parser = argparse.ArgumentParser(description="Build Docker images.")
+    parser.add_argument(
+        "-c1",
+        "--commit1",
+        dest="commit1",
+        default="",
+        help="The first commit ID (empty by default).",
+    )
+    parser.add_argument(
+        "-c2",
+        "--commit2",
+        dest="commit2",
+        default="",
+        help="The second commit ID (empty by default).",
+    )
+    return parser.parse_args()
+
+
+def main():
+    args = parse_args()
+    build_images(args.commit1, args.commit2)
+
+
 if __name__ == "__main__":
-    build_images()
+    main()

@@ -1,8 +1,10 @@
 name: Create PR to dev
 on:
   push:
-    branches:
-      - "*_version"
+    branches-ignore:
+      - main
+      - dev
+      - gh-pages*
 jobs:
   create_pr_to_dev:
     runs-on: ubuntu-latest

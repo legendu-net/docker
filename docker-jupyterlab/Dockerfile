@@ -1,5 +1,5 @@
 # NAME: dclong/jupyterlab
-FROM dclong/python-nodejs
+FROM dclong/python-nodejs:next
 # GIT: https://github.com/legendu-net/docker-python-nodejs.git
 
 RUN icon fish -iy

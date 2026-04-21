@@ -1,5 +1,5 @@
 # NAME: dclong/jupyterhub-pytorch
-FROM dclong/jupyterhub-cuda
+FROM dclong/jupyterhub-cuda:next
 # GIT: https://github.com/legendu-net/docker-jupyterhub-cuda.git
 
 RUN pip3 install loguru pyarrow pandas \

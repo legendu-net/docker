@@ -1,5 +1,5 @@
 # NAME: dclong/jupyter
-FROM dclong/python
+FROM dclong/python:next
 # GIT: https://github.com/legendu-net/docker-python.git
 
 RUN pip3 install --no-cache-dir tornado jupyter "nbconvert==5.6.1"

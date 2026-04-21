@@ -1,0 +1,9 @@
+description = "Changed files between 2 commits."
+prompt = """Add a function get_files_changed into build_images.py.
+
+- the function takes 2 parameters, commit1 and commit2
+- the function returns a unique list of changed files between those 2 commits in the current repository
+- implement the function using the tree_change function in the Python library dulwich
+- do NOT try to change existing code beside adding this function
+- do NOT change any other files
+"""

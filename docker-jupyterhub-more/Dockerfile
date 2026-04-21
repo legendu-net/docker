@@ -1,5 +1,5 @@
 # NAME: dclong/jupyterhub-more
-FROM dclong/jupyterhub-jdk
+FROM dclong/jupyterhub-jdk:next
 # GIT: https://github.com/legendu-net/docker-jupyterhub-jdk.git
     
 COPY scripts /scripts
@@ -13,14 +13,23 @@ RUN npm install -g @google/gemini-cli
 #RUN npm install -g tslab \
 #    && tslab install --python=python3
 
+# Deno
+RUN curl -fsSL https://deno.land/install.sh | sh -s -- --no-modify-path -y \
+    && mv /root/.deno/bin/deno /usr/local/bin/ \
+    && rm -rf /root/.deno/ \
+    && deno jupyter --install \
+    && mkdir -p /usr/local/share/jupyter/kernels/ \
+    && mv /root/.local/share/jupyter/kernels/deno /usr/local/share/jupyter/kernels/ \
+    && /scripts/sys/purge_cache.sh
+
 # Rust
 ENV RUSTUP_HOME=/usr/local/rustup PATH=/usr/local/cargo/bin:$PATH
 RUN apt-get -y update && apt-get -y install cmake \
     && /scripts/sys/purge_cache.sh
-COPY --from=dclong/rust-utils /usr/local/rustup/ /usr/local/rustup/
-COPY --from=dclong/rust-utils /usr/local/cargo/bin /usr/local/cargo/bin
-COPY --from=dclong/rust-utils /usr/bin/nperf /usr/bin/
-COPY --from=dclong/rust-utils /root/.local/share/jupyter/kernels/rust/ /usr/local/share/jupyter/kernels/rust/
+COPY --from=dclong/rust-utils:next /usr/local/rustup/ /usr/local/rustup/
+COPY --from=dclong/rust-utils:next /usr/local/cargo/bin /usr/local/cargo/bin
+COPY --from=dclong/rust-utils:next /usr/bin/nperf /usr/bin/
+COPY --from=dclong/rust-utils:next /root/.local/share/jupyter/kernels/rust/ /usr/local/share/jupyter/kernels/rust/
 
 # GoLANG
 ENV PATH=/usr/local/go/bin:$PATH

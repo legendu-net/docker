@@ -1,5 +1,5 @@
 # NAME: dclong/jupyterhub-ganymede
-FROM dclong/jupyterhub-jdk
+FROM dclong/jupyterhub-jdk:next
 # GIT: https://github.com/legendu-net/docker-jupyterhub-jdk.git
 
 # The Ganymede kernel

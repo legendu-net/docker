@@ -1,5 +1,5 @@
 # NAME: dclong/conda-build
-FROM dclong/conda
+FROM dclong/conda:next
 # GIT: https://github.com/legendu-net/docker-conda.git
 
 RUN conda install conda-build anaconda-client \

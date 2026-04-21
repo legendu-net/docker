@@ -1,7 +1,7 @@
 name: Update the Version of JupyterHub
 on:
   schedule:
-    - cron: '0 2 * * *'
+    - cron: '0 10 * * *'
 jobs:
   update-version-jupyterhub:
     runs-on: ubuntu-latest

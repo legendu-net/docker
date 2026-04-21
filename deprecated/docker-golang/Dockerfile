@@ -1,5 +1,5 @@
 # NAME: dclong/golang
-FROM dclong/python
+FROM dclong/python:next
 # GIT: https://github.com/legendu-net/docker-base.git
 
 ENV PATH=/usr/local/go/bin:$PATH
