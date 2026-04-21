@@ -1,5 +1,5 @@
 # NAME: dclong/rust-utils
-FROM dclong/rust
+FROM dclong/rust:next
 # GIT: https://github.com/legendu-net/docker-rust.git
 
 RUN rustup component add rust-src rustfmt clippy

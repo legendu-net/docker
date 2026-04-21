@@ -1,5 +1,5 @@
 # NAME: dclong/pypy
-FROM dclong/ubuntu_b
+FROM dclong/ubuntu_b:next
 # GIT: https://github.com/legendu-net/docker-ubuntu_b.git
 
 ARG ver=pypy3.7-v7.3.4-linux64

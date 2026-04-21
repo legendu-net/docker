@@ -1,5 +1,5 @@
 # NAME: dclong/jupyterhub-kotlin
-FROM dclong/jupyterhub-jdk
+FROM dclong/jupyterhub-jdk:next
 # GIT: https://github.com/legendu-net/docker-jupyterhub-jdk.git
 
 # Kotlin kernel

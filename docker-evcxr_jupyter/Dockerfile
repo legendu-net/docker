@@ -1,5 +1,5 @@
 # NAME: dclong/evcxr_jupyter
-FROM dclong/rust
+FROM dclong/rust:next
 # GIT: https://github.com/legendu-net/docker-rust.git
 
 # evcxr_jupyter

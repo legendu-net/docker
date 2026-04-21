@@ -1,5 +1,5 @@
 # NAME: dclong/vscode-server
-FROM dclong/jupyterhub-more
+FROM dclong/jupyterhub-more:next
 # GIT: https://github.com/legendu-net/docker-jupyterhub-more.git
 
 RUN pip3 install aiutil github-rest-api \

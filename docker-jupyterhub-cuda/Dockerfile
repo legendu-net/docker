@@ -1,5 +1,5 @@
 # NAME: dclong/jupyterhub-cuda
-FROM dclong/jupyterhub
+FROM dclong/jupyterhub:next
 # GIT: https://github.com/legendu-net/docker-jupyterhub.git
 
 ARG repo=https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64

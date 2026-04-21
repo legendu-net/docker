@@ -1,5 +1,5 @@
 # NAME: dclong/jupyterhub-more
-FROM dclong/jupyterhub-jdk
+FROM dclong/jupyterhub-jdk:next
 # GIT: https://github.com/legendu-net/docker-jupyterhub-jdk.git
     
 COPY scripts /scripts
@@ -26,10 +26,10 @@ RUN curl -fsSL https://deno.land/install.sh | sh -s -- --no-modify-path -y \
 ENV RUSTUP_HOME=/usr/local/rustup PATH=/usr/local/cargo/bin:$PATH
 RUN apt-get -y update && apt-get -y install cmake \
     && /scripts/sys/purge_cache.sh
-COPY --from=dclong/rust-utils /usr/local/rustup/ /usr/local/rustup/
-COPY --from=dclong/rust-utils /usr/local/cargo/bin /usr/local/cargo/bin
-COPY --from=dclong/rust-utils /usr/bin/nperf /usr/bin/
-COPY --from=dclong/rust-utils /root/.local/share/jupyter/kernels/rust/ /usr/local/share/jupyter/kernels/rust/
+COPY --from=dclong/rust-utils:next /usr/local/rustup/ /usr/local/rustup/
+COPY --from=dclong/rust-utils:next /usr/local/cargo/bin /usr/local/cargo/bin
+COPY --from=dclong/rust-utils:next /usr/bin/nperf /usr/bin/
+COPY --from=dclong/rust-utils:next /root/.local/share/jupyter/kernels/rust/ /usr/local/share/jupyter/kernels/rust/
 
 # GoLANG
 ENV PATH=/usr/local/go/bin:$PATH

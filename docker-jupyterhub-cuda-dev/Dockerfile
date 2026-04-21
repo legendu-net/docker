@@ -1,5 +1,5 @@
 # NAME: dclong/jupyterhub-cuda_b
-FROM dclong/jupyterhub-cuda
+FROM dclong/jupyterhub-cuda:next
 # GIT: https://github.com/legendu-net/docker-jupyterhub-cuda.git
 
 RUN apt-get -y update \

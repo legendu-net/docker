@@ -1,5 +1,5 @@
 # NAME: dclong/python-nodejs
-FROM dclong/python
+FROM dclong/python:next
 # GIT: https://github.com/legendu-net/docker-python.git
 
 RUN apt-get -y update \

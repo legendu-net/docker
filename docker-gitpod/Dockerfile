@@ -1,5 +1,5 @@
 # NAME: dclong/gitpod
-FROM dclong/jupyterhub-ds
+FROM dclong/jupyterhub-ds:next
 # GIT: https://github.com/legendu-net/docker-jupyterhub-ds.git
 
 RUN icon spark -ic -d /opt \

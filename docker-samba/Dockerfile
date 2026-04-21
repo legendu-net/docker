@@ -1,5 +1,5 @@
 # NAME: dclong/samba
-FROM dclong/base
+FROM dclong/base:next
 # GIT: https://github.com/legendu-net/docker-base.git
 
 RUN apt-get -y update \

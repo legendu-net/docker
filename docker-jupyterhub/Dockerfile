@@ -1,5 +1,5 @@
 # NAME: dclong/jupyterhub
-FROM dclong/jupyterlab
+FROM dclong/jupyterlab:next
 # GIT: https://github.com/legendu-net/docker-jupyterlab.git
 
 RUN npm install -g configurable-http-proxy \
