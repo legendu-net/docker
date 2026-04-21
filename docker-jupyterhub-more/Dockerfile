@@ -14,7 +14,7 @@ RUN npm install -g @google/gemini-cli
 #    && tslab install --python=python3
 
 # Deno
-RUN curl -fsSL https://deno.land/install.sh | sh \
+RUN curl -fsSL https://deno.land/install.sh | sh -s -- --no-modify-path -y \
     && mv /root/.deno/bin/deno /usr/local/bin/ \
     && rm -rf /root/.deno/ \
     && deno jupyter --install \
