@@ -1,7 +1,7 @@
 name: Update the Version of icon
 on:
   schedule:
-    - cron: '0 2 * * *'
+    - cron: '0 6 * * *'
 jobs:
   update-version-icon:
     runs-on: ubuntu-latest
