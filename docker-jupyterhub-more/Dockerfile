@@ -18,6 +18,7 @@ RUN curl -fsSL https://deno.land/install.sh | sh -s -- --no-modify-path -y \
     && mv /root/.deno/bin/deno /usr/local/bin/ \
     && rm -rf /root/.deno/ \
     && deno jupyter --install \
+    && mkdir -p /usr/local/share/jupyter/kernels/ \
     && mv /root/.local/share/jupyter/kernels/deno /usr/local/share/jupyter/kernels/ \
     && /scripts/sys/purge_cache.sh
 
