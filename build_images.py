@@ -53,9 +53,9 @@ def changed_files_between(commit1: str, commit2: str) -> list[Path]:
     changes = tree_changes(repo.object_store, c1.tree, c2.tree)
     files = set()
     for change in changes:
-        if change.old.path:
+        if change.old and change.old.path:
             files.add(change.old.path.decode())
-        if change.new.path:
+        if change.new and change.new.path:
             files.add(change.new.path.decode())
     return sorted(Path(file).resolve() for file in files)
 
