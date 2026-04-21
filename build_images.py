@@ -118,7 +118,9 @@ def _is_no_diff() -> bool:
 
 def build_images(commit1: str, commit2: str):
     if not has_relevant_changes(commit1, commit2):
-        print("Skip building Docker images as there are no relavent changes.\n")
+        print(
+            f"Skip building Docker images as there are no relavent changes between {commit1} and {commit2}.\n"
+        )
         return
     tags = ["next"]
     try:
