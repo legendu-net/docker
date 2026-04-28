@@ -26,7 +26,7 @@ jobs:
       - name: Store Docker Images on /mnt/docker
         run: |
           curl -sSL https://raw.githubusercontent.com/legendu-net/github_actions_scripts/main/docker/config_docker.py \
-            | uv run --script -
+            | sudo uv run --script -
       - name: Show Docker Images Before Building
         run: docker images
       - name: Build Docker Images
