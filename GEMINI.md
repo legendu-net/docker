@@ -13,24 +13,24 @@ and complex data science tools like JupyterLab and JupyterHub.
   - `docker-base` (Root)
   - `docker-rust`, `docker-python`, `docker-nodejs` (Language-specific)
   - `docker-jupyterlab`, `docker-jupyterhub` (Application-specific)
-- **Build Automation:** `build_images.py` manages the build order and tagging strategy.
+- **Build Automation:** A centralized `build_images.py` script (from `legendu-net/github_actions_scripts`) manages the build order and tagging strategy.
 
 ## Building and Running
 
 ### Build Automation
 
-The primary way to build and push images is using the `build_images.py` script.
+The primary way to build and push images is using a centralized `build_images.py` script.
 It requires Python 3.14+ and the `uv` package manager.
 
 ```bash
 # Build and push images in the defined order
-uv run --script build_images.py
+curl -sSL https://raw.githubusercontent.com/legendu-net/github_actions_scripts/main/build_images.py | uv run --script -
 ```
 
 The script:
 
 1. Determines tags based on the branch state (e.g., `next`, `latest`, and timestamped versions).
-1. Iterates through the `DIRS` list in `build_images.py` to ensure parent images are built before children.
+1. Iterates through the predefined `DIRS` list in the remote script to ensure parent images are built before children.
 1. Builds each image using `docker build`.
 1. Pushes the images to the registry.
 
@@ -44,7 +44,7 @@ run `./build.sh` in the corresponding directory.
 ### Image Hierarchy
 
 When adding a new image or modifying an existing one,
-respect the hierarchy defined in `build_images.py`.
+respect the hierarchy defined in the centralized `build_images.py` script.
 Always use the `:next` tag for parent images during development.
 
 ### Layer Optimization
@@ -79,7 +79,5 @@ This enables extended globbing for more powerful file matching in `RUN` commands
 
 ## Key Files
 
-- `build_images.py`: Orchestrator for building and pushing the image suite.
-- `config_docker.py`: Utility to configure Docker daemon settings (e.g., moving data-root).
 - `docker-base/Dockerfile`: The foundation image containing common utilities and the `purge_cache.sh` script.
 - `docker-base/scripts/sys/purge_cache.sh`: A comprehensive cache-clearing script used across all images.

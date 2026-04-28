@@ -24,14 +24,16 @@ jobs:
         run: |
           curl -LsSf https://astral.sh/uv/install.sh | sudo env UV_INSTALL_DIR="/usr/local/bin" sh
       - name: Store Docker Images on /mnt/docker
-        run: sudo ./config_docker.py
+        run: |
+          curl -sSL https://raw.githubusercontent.com/legendu-net/github_actions_scripts/main/docker/config_docker.py \
+            | sudo uv run --script -
       - name: Show Docker Images Before Building
         run: docker images
       - name: Build Docker Images
         run: |
-          uv run --script build_images.py \
+          curl -sSL https://raw.githubusercontent.com/legendu-net/github_actions_scripts/main/docker/build_images.py \
+            | uv run --script - \
             --commit1 "${{ github.event.before }}" \
             --commit2 "${{ github.event.after }}"
       - name: Show Docker Images Aftering Building
         run: docker images
-
