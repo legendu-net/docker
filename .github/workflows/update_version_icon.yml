@@ -2,6 +2,7 @@ name: Update the Version of icon
 on:
   schedule:
     - cron: '0 6 * * *'
+      timezone: 'America/Los_Angeles'
 jobs:
   update-version-icon:
     runs-on: ubuntu-latest

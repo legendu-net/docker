@@ -3,6 +3,7 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '0 9 13 * *'
+      timezone: 'America/Los_Angeles'
   push:
     branches:
       - main
