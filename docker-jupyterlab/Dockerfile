@@ -5,7 +5,6 @@ FROM dclong/python-nodejs:next
 ENV EDITOR=nvim
 ENV VISUAL=nvim
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends procps \
-    && useradd -m -s /bin/bash linuxbrew \
     && useradd -l -u 11111 -m -s /bin/bash linuxbrew \
     && chmod 755 /home/linuxbrew \
     && echo 'linuxbrew ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers \
