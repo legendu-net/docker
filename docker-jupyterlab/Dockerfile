@@ -12,9 +12,6 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-ins
     && su - linuxbrew -c '/home/linuxbrew/.linuxbrew/bin/brew install fish neovim' \
     && /scripts/sys/purge_cache.sh
 
-ENV PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:${PATH}"
-#RUN echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /etc/bash.bashrc \
-#    && mkdir -p /etc/fish && echo 'eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)' >> /etc/fish/config.fish
 RUN pip3 install \
       nbdime jinja2 nbconvert "jupyterlab>=2.1.0,<4.6.0" \
       jupyterlab_widgets ipywidgets jupyterlab_myst \
