@@ -4,6 +4,7 @@ FROM dclong/python-nodejs:next
 
 ENV EDITOR=nvim
 ENV VISUAL=nvim
+ENV PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends procps \
     && useradd -l -u 11111 -m -s /bin/bash linuxbrew \
     && chmod 755 /home/linuxbrew \
