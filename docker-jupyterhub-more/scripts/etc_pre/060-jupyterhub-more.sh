@@ -3,5 +3,5 @@
 su -m $DOCKER_USER -c "icon zellij -c"
 
 if [ -e "/workdir/.gemini" ]; then
-    ln -snf "/workdir/.gemini" "$HOME/.gemini"
+    su --login $DOCKER_USER -c 'ln -snf /workdir/.gemini ~/.gemini'
 fi
