@@ -10,8 +10,6 @@ RUN mkdir -p /workdir && chmod 777 /workdir
 WORKDIR /workdir
 COPY scripts /scripts
 
-ENV EDITOR=nvim
-ENV VISUAL=nvim
 RUN apt-get -y update \
     && DEBIAN_FRONTEND=noninteractive apt-get -y install --no-install-recommends \
         sudo \
@@ -22,8 +20,7 @@ RUN apt-get -y update \
         git openssh-client \
         rsync curl \
     && curl -sSL https://raw.githubusercontent.com/legendu-net/icon/main/install_icon.sh \
-        | bash -s -- -v v0.39.1 \
-    && icon neovim -iy \
+        | bash -s -- -v v0.42.0 \
     && echo "Set disable_coredump false" >> /etc/sudo.conf \
     && /scripts/sys/purge_cache.sh
 

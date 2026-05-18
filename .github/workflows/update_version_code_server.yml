@@ -2,6 +2,7 @@ name: Update the Version of code-server
 on:
   schedule:
     - cron: '0 2 * * *'
+      timezone: 'America/Los_Angeles'
 jobs:
   update-version-code-server:
     runs-on: ubuntu-latest

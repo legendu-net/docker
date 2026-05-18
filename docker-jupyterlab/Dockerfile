@@ -2,7 +2,17 @@
 FROM dclong/python-nodejs:next
 # GIT: https://github.com/legendu-net/docker-python-nodejs.git
 
-RUN icon fish -iy
+ENV EDITOR=nvim
+ENV VISUAL=nvim
+ENV PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends procps \
+    && useradd -l -u 11111 -m -s /bin/bash linuxbrew \
+    && chmod 755 /home/linuxbrew \
+    && echo 'linuxbrew ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers \
+    && su - linuxbrew -c 'NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"' \
+    && su - linuxbrew -c '/home/linuxbrew/.linuxbrew/bin/brew install fish neovim' \
+    && /scripts/sys/purge_cache.sh
+
 RUN pip3 install \
       nbdime jinja2 nbconvert "jupyterlab>=2.1.0,<4.6.0" \
       jupyterlab_widgets ipywidgets jupyterlab_myst \

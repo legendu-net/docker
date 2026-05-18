@@ -16,4 +16,6 @@ _copy_config settings.jupyterlab-settings jupyterlab_code_formatter
 chown -R $DOCKER_USER:$DOCKER_GROUP $HOME/.jupyter
 
 su -m $DOCKER_USER -c "icon fish -c"
+su -m $DOCKER_USER -c "icon nvim -c"
+su -m $DOCKER_USER -c "/home/linuxbrew/.linuxbrew/bin/nvim --headless '+Lazy! install' +qa" &
 

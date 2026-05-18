@@ -9,11 +9,11 @@
 
 case "$(id -un)" in
     root )
-        su -m $DOCKER_USER -c "jupyter lab --allow-root --ip='0.0.0.0' --port=8888 --no-browser --notebook-dir=/workdir"
+        su -m $DOCKER_USER -c "/opt/venv/bin/jupyter lab --allow-root --ip='0.0.0.0' --port=8888 --no-browser --notebook-dir=/workdir"
         ;;
     gitpod )
-        jupyter lab --allow-root --ip='0.0.0.0' --port=8888 --no-browser --notebook-dir=/workspace
+        /opt/venv/bin/jupyter lab --allow-root --ip='0.0.0.0' --port=8888 --no-browser --notebook-dir=/workspace
         ;;
     *)
-        jupyter lab --allow-root --ip='0.0.0.0' --port=8888 --no-browser --notebook-dir=/workdir
+        /opt/venv/bin/jupyter lab --allow-root --ip='0.0.0.0' --port=8888 --no-browser --notebook-dir=/workdir
 esac
